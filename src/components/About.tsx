@@ -12,7 +12,7 @@ const About = () => {
       <div className="section-container">
         <div className="text-center mb-8 md:mb-10">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 fade-in-section">
-            Sobre a <span className="text-gradient">MK CODE</span>
+            Sobre <span className="text-gradient">MK CODE</span>
           </h2>
           <div className="w-16 sm:w-20 h-1 bg-gradient-to-r from-mk-accent to-mk-hover mx-auto rounded-full mb-4 sm:mb-6"></div>
         </div>
