@@ -33,7 +33,7 @@ const CTASection = () => {
                   glow={true}
                   ripple={true}
                 >
-                  Falar agora com o MK CODE
+                  Falar agora com MK CODE
                 </EnhancedButton>
               </DialogTrigger>
               <DialogContent className="sm:max-w-md">

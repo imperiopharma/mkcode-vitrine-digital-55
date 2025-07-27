@@ -64,7 +64,7 @@ const Hero = () => {
               className="w-full sm:w-auto mt-2 sm:mt-0"
               ripple={true}
             >
-              Falar com o MK CODE
+              Falar com MK CODE
             </EnhancedButton>
           </div>
         </div>

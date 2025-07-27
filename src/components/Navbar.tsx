@@ -74,7 +74,7 @@ const Navbar = () => {
             </a>
             <div className="pt-2">
               <ButtonMk variant="primary" size="md" className="w-full">
-                Falar com o MK CODE
+                Falar com MK CODE
               </ButtonMk>
             </div>
           </div>
