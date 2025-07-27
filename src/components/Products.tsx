@@ -25,7 +25,7 @@ const Products = () => {
       description: "Criação de sites e sistemas personalizados",
       icon: <Globe className="w-5 h-5 sm:w-6 sm:h-6 text-mk-accent" />,
       features: ["Sites institucionais", "Landing pages", "Sistemas web"],
-      cta: "Quero criar meu site com o MK CODE",
+      cta: "Quero criar meu site com MK CODE",
       ctaIcon: <Globe className="w-4 h-4" />,
       available: true,
     },

@@ -54,7 +54,7 @@ const Differentials = () => {
           </h2>
           <div className="w-16 sm:w-20 h-1 bg-gradient-to-r from-mk-accent to-mk-hover mx-auto rounded-full mb-3 sm:mb-4"></div>
           <p className="text-mk-muted max-w-xl mx-auto px-3 text-sm sm:text-base animate-fade-up opacity-0" style={{ animationDelay: "0.2s", animationFillMode: "forwards" }}>
-            O que torna o MK CODE o parceiro ideal para seu negócio
+            O que torna MK CODE o parceiro ideal para seu negócio
           </p>
         </div>
 
