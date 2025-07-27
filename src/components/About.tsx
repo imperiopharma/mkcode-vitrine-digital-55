@@ -11,13 +11,17 @@ const About = () => {
     <section id="about" className="py-8 md:py-12 relative">
       <div className="section-container">
         <div className="text-center mb-8 md:mb-10">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 animate-fade-up opacity-0" style={{ animationFillMode: "forwards" }}>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 fade-in-section">
             Sobre a <span className="text-gradient">MK CODE</span>
           </h2>
           <div className="w-16 sm:w-20 h-1 bg-gradient-to-r from-mk-accent to-mk-hover mx-auto rounded-full mb-4 sm:mb-6"></div>
         </div>
 
-        <AnimatedCard className="max-w-3xl mx-auto backdrop-blur-xl animate-fade-up opacity-0 px-4 sm:px-6" style={{ animationDelay: "0.2s", animationFillMode: "forwards" }}>
+        <AnimatedCard 
+          className="max-w-3xl mx-auto backdrop-blur-xl fade-in-section px-4 sm:px-6" 
+          hoverEffect={true}
+          shimmer={true}
+        >
           <p className="text-base sm:text-lg text-center leading-relaxed mb-4">
             A MK CODE é uma empresa de automações e tecnologia que existe pra 
             <span className="text-gradient font-medium"> melhorar a vida de quem empreende</span>.
@@ -32,32 +36,32 @@ const About = () => {
           </p>
 
           <div className="mt-6 sm:mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5 sm:gap-6">
-            <div className="text-center animate-fade-up opacity-0" style={{ animationDelay: "0.3s", animationFillMode: "forwards" }}>
-              <div className="w-14 h-14 sm:w-16 sm:h-16 bg-mk-border/30 rounded-full flex items-center justify-center mx-auto mb-3">
+            <div className="text-center fade-in-section interactive-element">
+              <div className="w-14 h-14 sm:w-16 sm:h-16 bg-mk-border/30 rounded-full flex items-center justify-center mx-auto mb-3 hover-glow">
                 <Zap className="w-6 h-6 sm:w-8 sm:h-8 text-mk-accent" />
               </div>
               <h3 className="font-semibold mb-1">Automação</h3>
               <p className="text-sm text-mk-muted">Processos otimizados</p>
             </div>
             
-            <div className="text-center animate-fade-up opacity-0" style={{ animationDelay: "0.4s", animationFillMode: "forwards" }}>
-              <div className="w-14 h-14 sm:w-16 sm:h-16 bg-mk-border/30 rounded-full flex items-center justify-center mx-auto mb-3">
+            <div className="text-center fade-in-section interactive-element">
+              <div className="w-14 h-14 sm:w-16 sm:h-16 bg-mk-border/30 rounded-full flex items-center justify-center mx-auto mb-3 hover-glow">
                 <Palette className="w-6 h-6 sm:w-8 sm:h-8 text-mk-accent" />
               </div>
               <h3 className="font-semibold mb-1">Identidade</h3>
               <p className="text-sm text-mk-muted">Visual personalizado</p>
             </div>
             
-            <div className="text-center animate-fade-up opacity-0" style={{ animationDelay: "0.5s", animationFillMode: "forwards" }}>
-              <div className="w-14 h-14 sm:w-16 sm:h-16 bg-mk-border/30 rounded-full flex items-center justify-center mx-auto mb-3">
+            <div className="text-center fade-in-section interactive-element">
+              <div className="w-14 h-14 sm:w-16 sm:h-16 bg-mk-border/30 rounded-full flex items-center justify-center mx-auto mb-3 hover-glow">
                 <LayoutList className="w-6 h-6 sm:w-8 sm:h-8 text-mk-accent" />
               </div>
               <h3 className="font-semibold mb-1">Simplicidade</h3>
               <p className="text-sm text-mk-muted">Fácil de usar</p>
             </div>
             
-            <div className="text-center animate-fade-up opacity-0" style={{ animationDelay: "0.6s", animationFillMode: "forwards" }}>
-              <div className="w-14 h-14 sm:w-16 sm:h-16 bg-mk-border/30 rounded-full flex items-center justify-center mx-auto mb-3">
+            <div className="text-center fade-in-section interactive-element">
+              <div className="w-14 h-14 sm:w-16 sm:h-16 bg-mk-border/30 rounded-full flex items-center justify-center mx-auto mb-3 hover-glow">
                 <Globe className="w-6 h-6 sm:w-8 sm:h-8 text-mk-accent" />
               </div>
               <h3 className="font-semibold mb-1">Sob encomenda</h3>

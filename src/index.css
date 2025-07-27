@@ -77,6 +77,36 @@
     @apply bg-gradient-to-r from-mk-accent to-mk-hover bg-clip-text text-transparent;
   }
   
+  /* Enhanced animations */
+  .hover-lift {
+    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-lg;
+  }
+  
+  .hover-glow {
+    @apply transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,191,255,0.4)];
+  }
+  
+  .pulse-glow {
+    @apply animate-pulse shadow-[0_0_20px_rgba(0,191,255,0.3)];
+  }
+  
+  /* Micro-interactions */
+  .interactive-element {
+    @apply transform transition-all duration-200 hover:scale-105 active:scale-95;
+  }
+  
+  .button-ripple {
+    @apply relative overflow-hidden;
+  }
+  
+  .fade-in-section {
+    @apply opacity-0 translate-y-8 transition-all duration-700 ease-out;
+  }
+  
+  .fade-in-section.visible {
+    @apply opacity-100 translate-y-0;
+  }
+  
   /* Button text and icon color overrides */
   .btn-mk-primary {
     @apply text-black;

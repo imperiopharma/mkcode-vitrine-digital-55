@@ -2,7 +2,7 @@
 import React from "react";
 import { ShoppingBag, Link, MessageSquare, Globe } from "lucide-react";
 import AnimatedCard from "./ui/AnimatedCard";
-import ButtonMk from "./ui/ButtonMk";
+import EnhancedButton from "./ui/EnhancedButton";
 import { useIsMobile } from "@/hooks/use-mobile";
 
 const Products = () => {
@@ -55,11 +55,11 @@ const Products = () => {
     <section id="products" className="py-8 md:py-12 bg-gradient-to-b from-mk-bg to-mk-bg/95 relative">
       <div className="section-container">
         <div className="text-center mb-8 md:mb-12">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 animate-fade-up opacity-0" style={{ animationFillMode: "forwards" }}>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 fade-in-section">
             Nossos <span className="text-gradient">Produtos</span>
           </h2>
           <div className="w-16 sm:w-20 h-1 bg-gradient-to-r from-mk-accent to-mk-hover mx-auto rounded-full mb-3 sm:mb-4"></div>
-          <p className="text-mk-muted max-w-xl mx-auto text-sm sm:text-base animate-fade-up opacity-0 px-4" style={{ animationDelay: "0.2s", animationFillMode: "forwards" }}>
+          <p className="text-mk-muted max-w-xl mx-auto text-sm sm:text-base fade-in-section px-4">
             Ferramentas práticas que elevam seu negócio ao próximo nível
           </p>
         </div>
@@ -68,12 +68,12 @@ const Products = () => {
           {products.map((product, index) => (
             <div 
               key={product.id} 
-              className="animate-fade-up opacity-0" 
-              style={{ animationDelay: `${0.3 + 0.15 * index}s`, animationFillMode: "forwards" }}
+              className="fade-in-section"
             >
               <AnimatedCard 
                 glowEffect={true} 
                 hoverEffect={true}
+                shimmer={true}
                 className="h-full flex flex-col p-4 sm:p-5"
               >
                 <div className="flex items-center justify-between mb-3 sm:mb-4">
@@ -95,14 +95,16 @@ const Products = () => {
                     ))}
                   </ul>
                   
-                  <ButtonMk 
+                  <EnhancedButton 
                     variant={product.available ? "primary" : "outline"} 
                     size="sm"
                     className="w-full text-xs sm:text-sm"
                     icon={product.ctaIcon}
+                    glow={product.available}
+                    ripple={true}
                   >
                     {product.cta}
-                  </ButtonMk>
+                  </EnhancedButton>
                 </div>
               </AnimatedCard>
             </div>

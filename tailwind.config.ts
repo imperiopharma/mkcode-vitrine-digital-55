@@ -32,6 +32,8 @@ export default {
 					accent: '#00BFFF',
 					hover: '#00E5FF',
 					border: '#2E3A45',
+					'accent-soft': '#33C3F0',
+					'bg-card': '#1A1F26',
 				},
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
@@ -108,8 +110,14 @@ export default {
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'fade-in': 'fade-in 0.8s ease-out',
 				'fade-up': 'fade-up 0.8s ease-out',
+				'fade-in-up': 'fade-in-up 0.6s ease-out forwards',
+				'slide-in-left': 'slide-in-left 0.6s ease-out forwards',
+				'slide-in-right': 'slide-in-right 0.6s ease-out forwards',
 				'bounce-subtle': 'bounce-subtle 3s ease-in-out infinite',
-				'glow': 'glow 3s ease-in-out infinite'
+				'float': 'float 3s ease-in-out infinite',
+				'glow': 'glow 3s ease-in-out infinite',
+				'pulse-glow': 'pulse-glow 2s ease-in-out infinite',
+				'shimmer': 'shimmer 2s linear infinite'
 			}
 		}
 	},

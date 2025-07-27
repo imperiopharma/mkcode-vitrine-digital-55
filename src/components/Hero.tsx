@@ -1,9 +1,10 @@
 
 import React from "react";
-import ButtonMk from "./ui/ButtonMk";
+import EnhancedButton from "./ui/EnhancedButton";
 import { MessageSquare, Rocket } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
 import MatrixCodeRain from "./MatrixCodeRain";
+import ParallaxBackground from "./ui/ParallaxBackground";
 
 const Hero = () => {
   const isMobile = useIsMobile();
@@ -12,28 +13,31 @@ const Hero = () => {
     <section className="pt-8 pb-8 md:pt-16 md:pb-20 overflow-hidden relative">
       {/* Matrix Code Rain effect */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <MatrixCodeRain opacity={0.3} /> {/* Mantendo a opacidade reduzida */}
+        <MatrixCodeRain opacity={0.25} />
       </div>
+      
+      {/* Parallax background elements */}
+      <ParallaxBackground intensity={0.3} />
 
       <div className="section-container">
         <div className="relative z-10 max-w-3xl mx-auto text-center">
-          {/* Logo com tamanho muito maior */}
-          <div className="flex justify-center mb-6 md:mb-8 animate-fade-in">
+          {/* Logo com animação aprimorada */}
+          <div className="flex justify-center mb-6 md:mb-8 fade-in-section">
             <img
               src="/lovable-uploads/122bf2f3-db17-44f6-a7c6-1bb03f153910.png"
-              alt="MK CODE"
-              className="h-52 sm:h-52 md:h-64 lg:h-72 w-auto"
+              alt="MK CODE - Soluções digitais com identidade"
+              className="h-52 sm:h-52 md:h-64 lg:h-72 w-auto hover:scale-105 transition-transform duration-300"
+              loading="eager"
             />
           </div>
           
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 leading-tight animate-fade-in">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 leading-tight fade-in-section">
             Seu negócio, <span className="text-gradient">nossa estrutura.</span>
           </h1>
           
-          {/* Melhorando a legibilidade do parágrafo com um fundo semitransparente e destaque */}
-          <div className="rounded-lg bg-black/40 backdrop-blur-sm p-4 mb-6 md:mb-8">
-            <p className="text-base sm:text-lg md:text-xl text-white mb-0 max-w-2xl mx-auto animate-fade-up opacity-0" 
-               style={{ animationDelay: "0.3s", animationFillMode: "forwards" }}>
+          {/* Melhorando a legibilidade com animações suaves */}
+          <div className="rounded-lg bg-black/40 backdrop-blur-sm p-4 mb-6 md:mb-8 fade-in-section hover-lift">
+            <p className="text-base sm:text-lg md:text-xl text-white mb-0 max-w-2xl mx-auto">
               Soluções digitais com identidade – pra quem vende pelo WhatsApp, Instagram ou no balcão. 
               <span className="font-semibold text-mk-accent block mt-2">
                 Construímos qualquer tipo de site ou plataforma sob encomenda.
@@ -41,24 +45,27 @@ const Hero = () => {
             </p>
           </div>
           
-          <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 animate-fade-up opacity-0" 
-               style={{ animationDelay: "0.6s", animationFillMode: "forwards" }}>
-            <ButtonMk 
+          <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 fade-in-section" 
+               style={{ animationDelay: "0.6s" }}>
+            <EnhancedButton 
               variant="primary" 
               size={isMobile ? "md" : "lg"} 
               className="w-full sm:w-auto"
               icon={<Rocket className="w-4 h-4" />}
+              glow={true}
+              ripple={true}
             >
               Quero minha estrutura digital
-            </ButtonMk>
-            <ButtonMk 
+            </EnhancedButton>
+            <EnhancedButton 
               variant="outline" 
               size={isMobile ? "md" : "lg"} 
               icon={<MessageSquare className="w-4 h-4" />}
-              className="w-full sm:w-auto mt-2 sm:mt-0 text-white hover:text-black"
+              className="w-full sm:w-auto mt-2 sm:mt-0"
+              ripple={true}
             >
               Falar com a MK CODE
-            </ButtonMk>
+            </EnhancedButton>
           </div>
         </div>
       </div>

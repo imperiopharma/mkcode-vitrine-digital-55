@@ -6,6 +6,7 @@ import About from "@/components/About";
 import Products from "@/components/Products";
 import ForWhom from "@/components/ForWhom";
 import Differentials from "@/components/Differentials";
+import Portfolio from "@/components/Portfolio";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 
@@ -19,11 +20,8 @@ const Index = () => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          // Quando um elemento entra na viewport
           if (entry.isIntersecting) {
             entry.target.classList.add("visible");
-            // Cast para HTMLElement para acessar style
-            (entry.target as HTMLElement).style.opacity = "1";
             observer.unobserve(entry.target);
           }
         });
@@ -31,10 +29,9 @@ const Index = () => {
       { threshold: 0.1, rootMargin: "0px 0px -50px 0px" }
     );
 
-    // Seleciona todos os elementos com animação de fade-up
-    const animateElements = document.querySelectorAll(".animate-fade-up");
+    // Seleciona todos os elementos com animação
+    const animateElements = document.querySelectorAll(".fade-in-section");
     animateElements.forEach((el) => {
-      // Garante que os elementos comecem invisíveis
       if (!el.classList.contains("visible")) {
         observer.observe(el);
       }
@@ -58,6 +55,8 @@ const Index = () => {
         <ForWhom />
         <div className="w-full h-0.5 bg-gradient-to-r from-transparent via-mk-border/20 to-transparent"></div>
         <Differentials />
+        <div className="w-full h-0.5 bg-gradient-to-r from-transparent via-mk-border/20 to-transparent"></div>
+        <Portfolio />
         <div className="w-full h-0.5 bg-gradient-to-r from-transparent via-mk-border/20 to-transparent"></div>
         <CTASection />
       </div>

@@ -1,5 +1,5 @@
 import React from "react";
-import ButtonMk from "./ui/ButtonMk";
+import EnhancedButton from "./ui/EnhancedButton";
 import { MessageSquare, ArrowRight } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { 
@@ -18,21 +18,23 @@ const CTASection = () => {
     <section className="py-10 md:py-16 relative overflow-hidden">
       <div className="section-container">
         <div className="max-w-3xl mx-auto text-center relative z-10 px-4 sm:px-0">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 animate-fade-up opacity-0" style={{ animationFillMode: "forwards" }}>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 fade-in-section">
             Pronto pra tirar seu negócio do improviso e dar o <span className="text-gradient">próximo passo</span>?
           </h2>
           
-          <div className="animate-fade-up opacity-0" style={{ animationDelay: "0.3s", animationFillMode: "forwards" }}>
+          <div className="fade-in-section">
             <Dialog>
               <DialogTrigger asChild>
-                <ButtonMk 
+                <EnhancedButton 
                   variant="primary" 
                   size={isMobile ? "md" : "lg"}
                   icon={<MessageSquare className="w-4 h-4 sm:w-5 sm:h-5" />}
                   className="animate-bounce-subtle"
+                  glow={true}
+                  ripple={true}
                 >
                   Falar agora com a MK CODE
-                </ButtonMk>
+                </EnhancedButton>
               </DialogTrigger>
               <DialogContent className="sm:max-w-md">
                 <DialogHeader>
@@ -45,15 +47,15 @@ const CTASection = () => {
                   <p className="text-sm text-mk-muted">
                     Clique no botão abaixo para iniciar uma conversa pelo WhatsApp:
                   </p>
-                  <ButtonMk 
+                  <EnhancedButton 
                     variant="primary"
                     icon={<MessageSquare className="w-4 h-4" />}
                     onClick={() => window.open("https://wa.me/5500000000000", "_blank")}
                     className="w-full"
-                    iconPosition="left"
+                    ripple={true}
                   >
                     Iniciar conversa
-                  </ButtonMk>
+                  </EnhancedButton>
                 </div>
               </DialogContent>
             </Dialog>
