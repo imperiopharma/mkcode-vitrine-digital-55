@@ -1,6 +1,6 @@
 
 import React from "react";
-import { ShoppingBag, Link, MessageSquare, Globe } from "lucide-react";
+import { ShoppingBag, Globe, Settings } from "lucide-react";
 import AnimatedCard from "./ui/AnimatedCard";
 import EnhancedButton from "./ui/EnhancedButton";
 import { useIsMobile } from "@/hooks/use-mobile";
@@ -12,43 +12,43 @@ const Products = () => {
     {
       id: 1,
       name: "MK COMMERCE",
-      description: "Catálogo online com pedido via WhatsApp",
+      description: "Catálogo digital e pedidos via WhatsApp",
       icon: <ShoppingBag className="w-5 h-5 sm:w-6 sm:h-6 text-mk-accent" />,
-      features: ["Loja virtual", "Catálogo digital", "Pedidos pelo WhatsApp"],
+      features: ["Loja virtual personalizada", "Catálogo digital sob medida", "Gestão de pedidos integrada ao WhatsApp"],
       cta: "Quero uma loja digital",
       ctaIcon: <ShoppingBag className="w-4 h-4" />,
       available: true,
     },
     {
-      id: 4,
-      name: "Sites e Páginas Sob Medida",
-      description: "Criação de sites e sistemas personalizados",
+      id: 2,
+      name: "Sites & Sistemas Sob Medida",
+      description: "Criação de sites institucionais, landing pages e sistemas web",
       icon: <Globe className="w-5 h-5 sm:w-6 sm:h-6 text-mk-accent" />,
-      features: ["Sites institucionais", "Landing pages", "Sistemas web"],
+      features: ["Sites profissionais e responsivos", "Landing pages de alta conversão", "Sistemas web personalizados"],
       cta: "Quero criar meu site com MK CODE",
       ctaIcon: <Globe className="w-4 h-4" />,
       available: true,
     },
     {
-      id: 2,
-      name: "ABREVIO",
-      description: "Encurtador de link com painel e identidade",
-      icon: <Link className="w-5 h-5 sm:w-6 sm:h-6 text-mk-accent" />,
-      features: ["Domínio: abrev.io", "Links personalizados", "Estatísticas"],
-      cta: "Conhecer o abrev.io",
-      ctaIcon: <Link className="w-4 h-4" />,
+      id: 3,
+      name: "Automações Digitais",
+      description: "Automatize processos e atendimento no seu negócio",
+      icon: <Settings className="w-5 h-5 sm:w-6 sm:h-6 text-mk-accent" />,
+      features: ["Chatbots e automação no WhatsApp", "Integração de sistemas (envio de pedidos, leads, notificações)", "Respostas automáticas e fluxos inteligentes"],
+      cta: "Quero automatizar meu negócio",
+      ctaIcon: <Settings className="w-4 h-4" />,
       available: true,
     },
-    {
-      id: 3,
-      name: "Automação WhatsApp",
-      description: "Atendimento automatizado com WhatsApp",
-      icon: <MessageSquare className="w-5 h-5 sm:w-6 sm:h-6 text-mk-accent" />,
-      features: ["Chatbot", "Respostas automáticas", "Fluxos de atendimento"],
-      cta: "Quero ser avisado",
-      ctaIcon: <MessageSquare className="w-4 h-4" />,
-      available: false,
-    },
+  ];
+
+  const technologies = [
+    { name: "Python", icon: "🐍" },
+    { name: "FastAPI", icon: "⚡" },
+    { name: "React", icon: "⚛️" },
+    { name: "Next.js", icon: "▲" },
+    { name: "TailwindCSS", icon: "🎨" },
+    { name: "Docker", icon: "🐳" },
+    { name: "IA Generativa", icon: "🤖" },
   ];
 
   return (
@@ -64,7 +64,7 @@ const Products = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8 px-3 sm:px-0">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8 px-3 sm:px-0">
           {products.map((product, index) => (
             <div 
               key={product.id} 
@@ -78,9 +78,6 @@ const Products = () => {
               >
                 <div className="flex items-center justify-between mb-3 sm:mb-4">
                   {product.icon}
-                  {!product.available && (
-                    <span className="px-2 py-0.5 bg-mk-border text-xs rounded-full">Em breve</span>
-                  )}
                 </div>
                 <h3 className="text-lg sm:text-xl font-bold mb-2">{product.name}</h3>
                 <p className="text-mk-muted mb-4 text-sm sm:text-base">{product.description}</p>
@@ -96,11 +93,11 @@ const Products = () => {
                   </ul>
                   
                   <EnhancedButton 
-                    variant={product.available ? "primary" : "outline"} 
+                    variant="primary"
                     size="sm"
                     className="w-full text-xs sm:text-sm"
                     icon={product.ctaIcon}
-                    glow={product.available}
+                    glow={true}
                     ripple={true}
                   >
                     {product.cta}
@@ -109,6 +106,31 @@ const Products = () => {
               </AnimatedCard>
             </div>
           ))}
+        </div>
+
+        {/* Seção de Tecnologias */}
+        <div className="mt-16 md:mt-20">
+          <div className="text-center mb-8">
+            <p className="text-mk-muted text-sm sm:text-base">
+              Tecnologias que impulsionam nossos projetos
+            </p>
+          </div>
+          
+          <div className="flex flex-wrap justify-center items-center gap-6 sm:gap-8 md:gap-10 px-4">
+            {technologies.map((tech, index) => (
+              <div 
+                key={index}
+                className="group flex flex-col items-center space-y-2 transition-all duration-300 hover:-translate-y-1"
+              >
+                <div className="text-2xl sm:text-3xl md:text-4xl transition-all duration-300 group-hover:scale-110 group-hover:drop-shadow-lg">
+                  {tech.icon}
+                </div>
+                <span className="text-xs sm:text-sm text-mk-muted group-hover:text-mk-foreground transition-colors duration-300">
+                  {tech.name}
+                </span>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
