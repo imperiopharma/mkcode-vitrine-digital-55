@@ -23,7 +23,7 @@ const About = () => {
           shimmer={true}
         >
           <p className="text-base sm:text-lg text-center leading-relaxed mb-4">
-            O MK CODE é uma empresa de automações e tecnologia que existe pra 
+            MK CODE é uma empresa de automações e tecnologia que existe pra 
             <span className="text-gradient font-medium"> melhorar a vida de quem empreende</span>.
           </p>
           <p className="text-base sm:text-lg text-center leading-relaxed mb-4">
