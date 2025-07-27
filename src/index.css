@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Sora:wght@300;400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 43% 6%;
+    --foreground: 0 0% 100%;
+
+    --card: 212 41% 10%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 212 41% 10%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 196 100% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 28% 23%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 215 16% 69%;
+    --muted-foreground: 215 16% 69%;
+
+    --accent: 196 100% 63%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 19% 23%;
+    --input: 210 19% 23%;
+    --ring: 196 100% 50%;
+
+    --radius: 0.5rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-mk-bg text-mk-text font-sans;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-sora font-semibold;
+  }
+  
+  /* Improves tap targets on mobile */
+  button, a {
+    @apply outline-none focus-visible:ring-2 focus-visible:ring-mk-accent/70;
+  }
+}
+
+@layer components {
+  .glow-border {
+    @apply border border-mk-accent/40 shadow-[0_0_15px_0_rgba(0,191,255,0.3)] transition-all duration-300;
+  }
+  
+  .glow-border:hover {
+    @apply border-mk-hover/70 shadow-[0_0_25px_0_rgba(0,229,255,0.5)];
+  }
+
+  .section-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10 md:py-16;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-mk-accent to-mk-hover bg-clip-text text-transparent;
+  }
+  
+  /* Button text and icon color overrides */
+  .btn-mk-primary {
+    @apply text-black;
+  }
+  
+  .btn-mk-primary svg {
+    @apply text-black;
+  }
+  
+  /* Outline variant specific styles */
+  button[class*="bg-transparent"] {
+    @apply text-white hover:text-black transition-colors duration-300;
+  }
+  
+  button[class*="bg-transparent"] svg {
+    @apply text-white transition-colors duration-300;
+  }
+  
+  button[class*="bg-transparent"]:hover svg {
+    @apply text-black;
+  }
+  
+  /* Ensure legibility during hover transitions */
+  button:hover {
+    @apply transition-all duration-300;
+  }
+
+  /* Dialog styling fixes */
+  .bg-background {
+    @apply bg-mk-bg;
+  }
+
+  .bg-accent {
+    @apply bg-mk-accent;
+  }
+
+  .text-muted-foreground {
+    @apply text-white;
+  }
+  
+  /* Z-index utilities for matrix code rain */
+  .-z-5 {
+    z-index: -5;
+  }
+  
+  /* Mobile-specific optimizations */
+  @media (max-width: 640px) {
+    .animate-fade-up {
+      animation-duration: 0.6s;
+    }
+    
+    .section-container {
+      @apply py-6;
+    }
+  }
+}
+
+/* Improved scroll behaviors for mobile */
+@media (max-width: 640px) {
+  html {
+    scroll-padding-top: 80px;
+  }
+  
+  .scroll-smooth-mobile {
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* Touch-friendly animations */
+@media (hover: none) {
+  .hover\:scale-105, .hover\:-translate-y-2 {
+    transform: none !important;
+  }
+}
