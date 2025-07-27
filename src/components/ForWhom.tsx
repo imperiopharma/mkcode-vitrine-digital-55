@@ -73,7 +73,7 @@ const ForWhom = () => {
                 icon={<MessageSquare className="w-4 h-4" />}
                 className="mx-auto animate-bounce-subtle"
               >
-                Falar com a MK CODE
+                Falar com o MK CODE
               </ButtonMk>
             </DialogTrigger>
             <DialogContent className="sm:max-w-md">
